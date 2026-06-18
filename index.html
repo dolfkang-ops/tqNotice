@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
-<html lang="ko" data-theme="light" style=""><head><meta charset="utf-8">
-    
-    
+<html lang="ko" data-theme="light"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>캠핑장 전원관리 솔루션 안내 - 땡큐캠핑</title>
     <style>
       * {
@@ -17,10 +18,12 @@
       }
 
       .page {
+        width: 100%;
         max-width: 980px;
         margin: 0 auto;
         background: #ffffff;
         box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        overflow: hidden;
       }
 
       .hero {
@@ -180,7 +183,10 @@
         color: #ffffff;
         font-size: 16px;
         font-weight: 800;
+        line-height: 1.4;
+        text-align: center;
         text-decoration: none;
+        word-break: keep-all;
         box-shadow: 0 10px 24px rgba(20, 184, 166, 0.28);
       }
 
@@ -482,14 +488,84 @@
         color: #475569;
       }
 
+      @media (max-width: 1024px) {
+        .hero {
+          padding: 48px 40px 40px;
+        }
+
+        .section {
+          padding: 36px 40px;
+        }
+      }
+
       @media (max-width: 768px) {
+        body {
+          background: #ffffff;
+        }
+
+        .page {
+          box-shadow: none;
+        }
+
         .hero,
         .section {
-          padding: 32px 22px;
+          padding: 30px 20px;
+        }
+
+        .hero::after {
+          right: -80px;
+          top: -50px;
+          width: 220px;
+          height: 220px;
         }
 
         .hero h1 {
           font-size: 30px;
+          line-height: 1.3;
+        }
+
+        .hero p,
+        .lead,
+        .feature-heading p,
+        .card p,
+        .card li,
+        .section li {
+          font-size: 15px;
+        }
+
+        .section h2 {
+          font-size: 24px;
+        }
+
+        .infographic {
+          padding: 20px;
+          border-radius: 20px;
+        }
+
+        .flow-step,
+        .feature-card,
+        .card,
+        .cost-panel {
+          padding: 20px 18px;
+          border-radius: 18px;
+        }
+
+        .flow-step {
+          min-height: auto;
+        }
+
+        .flow-step::after {
+          width: 72px;
+          height: 72px;
+        }
+
+        .infographic-head h3 {
+          font-size: 21px;
+        }
+
+        .feature-card h3,
+        .card h3 {
+          font-size: 18px;
         }
 
         .grid,
@@ -500,13 +576,66 @@
           grid-template-columns: 1fr;
         }
 
-        .infographic-head {
+        .infographic-head,
+        .feature-card-top {
           flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .cta-button {
+          display: block;
+          width: 100%;
+          padding: 15px 18px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero,
+        .section {
+          padding: 24px 16px;
+        }
+
+        .hero h1 {
+          font-size: 26px;
+        }
+
+        .hero p {
+          font-size: 15px;
+        }
+
+        .section h2 {
+          font-size: 22px;
+        }
+
+        .infographic-head h3 {
+          font-size: 19px;
+        }
+
+        .step-title {
+          font-size: 17px;
+        }
+
+        .step-text,
+        .icon-item span,
+        .stat-pill span,
+        .camping-control p,
+        .feature-card .feature-list li {
+          font-size: 13px;
+        }
+
+        .price {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+
+        .feature-kicker {
+          font-size: 11px;
+          letter-spacing: 0.05em;
         }
       }
     </style>
   </head>
-  <body style="">
+  <body>
     <div class="page">
       <section class="hero">
         <h1>입실부터 퇴실까지 자동으로<br>관리되는 캠핑장 전원관리 솔루션</h1>
@@ -706,12 +835,12 @@
         <div class="grid">
           <div class="card">
             <h3>모듈형 IoT 전원장비</h3>
-            <p>여러 개의 콘센트를 통합 관리할 수 있는 장비로, 사이트 단위 또는 구역 단위로 전원을 관리하고자 하는 캠핑장에 적합합니다.</p>
+            <p><strong><span class="highlight">여러 개의 콘센트를 통합 관리</span></strong>할 수 있으며, 샌드박스에 모듈을 설치하여 사용하는 방식입니다.</p>
             <div class="price">공급가 80,000원 <span style="font-weight: 600; color: #475569;">(부가세 별도)</span></div>
           </div>
           <div class="card">
             <h3>플러그형 IoT 전원장비</h3>
-            <p>단일 전원 단자를 관리할 수 있는 장비로, 개별 콘센트 단위로 간편하게 전원을 제어하고자 하는 캠핑장에 적합합니다.</p>
+            <p><strong><span class="highlight">단일 전원 단자를 관리</span></strong>할 수 있는 장비로, 개별 콘센트 단위로 간편하게 전원을 제어하고자 하는 캠핑장에 적합합니다.</p>
             <div class="price">공급가 25,000원 <span style="font-weight: 600; color: #475569;">(부가세 별도)</span></div>
           </div>
         </div>
@@ -752,7 +881,7 @@
           땡큐캠핑은 캠핑장의 운영 효율을 높이고, 캠퍼에게 더 안전하고 편리한 캠핑 환경을 제공할 수 있도록 스마트 캠핑장
           솔루션을 지속적으로 확대해 나가겠습니다.
         </p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfva3G4Wr6ZbLA-Si9ZkmIBUajRQmuihgIC-hmgjQ4mjrb4qQ/viewform" class="cta-button" target="_blank">전원관리 솔루션 문의 신청</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfva3G4Wr6ZbLA-Si9ZkmIBUajRQmuihgIC-hmgjQ4mjrb4qQ/viewform" class="cta-button">전원관리 솔루션 문의 신청</a>
       </section>
     </div>
   
